@@ -1,4 +1,4 @@
-# A sneaker website that fetches website from an external api and displays them.
+# A sneaker website that fetches sneakers from an external api and displays them.
 
 The sneaker website is built using contextApi.
 
