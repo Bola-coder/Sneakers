@@ -1,0 +1,129 @@
+nav {
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4%;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu h2 {
+  font-size: 1.3rem;
+  margin-right: 30px;
+}
+
+.menu h2,
+p {
+  padding: 4px 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.menu h2:hover,
+p:hover {
+  color: hsl(26, 100%, 55%);
+}
+
+.mobile-menu {
+  display: none;
+}
+.profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile svg {
+  font-size: 30px;
+  margin-right: 20px;
+  color: hsl(26, 100%, 55%);
+}
+
+.profile svg:hover {
+  color: hsl(26, 75%, 42%);
+}
+
+.profile img {
+  width: 40px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 5px;
+    margin: 0;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    padding: 10px;
+    position: relative;
+    transition: all 2s ease-in;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .hamburger svg {
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+  .hamburger h2 {
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  .hamburger h2:hover {
+    color: hsl(26, 100%, 55%);
+  }
+
+  .mobile-content {
+    z-index: 1;
+    background-color: #fff;
+    width: 400px;
+    height: 100vw;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    box-shadow: 2px 2px 5px rgb(224, 211, 211);
+    padding: 20px;
+  }
+
+  .mobile-content svg {
+    font-size: 25px;
+    font-weight: lighter;
+  }
+
+  .mobile-content p {
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .mobile-content {
+    width: 250px;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mobile-content {
+    width: 200px;
+    /* height: 100vh; */
+  }
+}

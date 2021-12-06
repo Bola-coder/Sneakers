@@ -1,0 +1,23 @@
+.products {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.product {
+  width: 300px;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgb(211, 206, 206);
+}
+
+.product svg {
+  font-size: 25px;
+  color: #777;
+}
+
+.product svg:hover {
+  color: hsl(26, 100%, 55%);
+}
