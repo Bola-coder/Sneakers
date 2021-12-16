@@ -5,6 +5,14 @@
   flex-wrap: wrap;
   padding: 20px;
 }
+
+.loading-error {
+  font-size: 20px;
+  color: hsl(26, 100%, 55%);
+  text-align: center;
+  margin-top: 14%;
+  font-weight: 800;
+}
 .product {
   width: 300px;
   padding: 20px;

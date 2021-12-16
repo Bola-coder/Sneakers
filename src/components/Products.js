@@ -16,8 +16,10 @@ const Product = ({ products, loading, error, bookmarked, setBookmarked }) => {
 
   return (
     <div className="container">
-      {loading ? <p>Loading Sneakers... Just a secs</p> : null}
-      {error ? { error } : null}
+      {loading ? (
+        <p className="loading-error">Loading Sneakers... Just a secs</p>
+      ) : null}
+      {error ? { error } : ""}
       <div className="products">
         {products
           ? products.map((prod) => (

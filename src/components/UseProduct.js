@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { ProductContext } from "./ProductContext";
+import { ProductContext } from "./context/ProductContext";
 
 const UseProduct = (url, options) => {
   const [products, setProducts] = useContext(ProductContext);
@@ -11,11 +11,11 @@ const UseProduct = (url, options) => {
       .then((response) => response.json())
       .then((data) => {
         data = data.results;
-        // console.log(data);
-        // const filteredData = data.filter(
-        //   (element) => element.image.original !== ""
-        // );
-        setProducts(data);
+        console.log(data);
+        const filteredData = data.filter(
+          (element) => element.image.original !== ""
+        );
+        setProducts(filteredData);
         setLoading(false);
       })
       .catch((err) => {

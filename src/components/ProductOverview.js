@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import Product from "./Products";
 import UseProduct from "./UseProduct";
-import { ProductContext } from "./ProductContext";
+import { ProductContext } from "./context/ProductContext";
 const ProductOverview = () => {
-  const url = "https://the-sneaker-database.p.rapidapi.com/sneakers?limit=10";
+  const url = "https://the-sneaker-database.p.rapidapi.com/sneakers?limit=30";
   const options = {
     method: "GET",
     headers: {
