@@ -7,18 +7,33 @@ import Nav from "./components/Nav";
 import { ProductProvider } from "./components/context/ProductContext";
 import AuthProvider from "./components/context/AuthContext";
 import Signup from "./components/Signup";
+import Login from "./components/Login";
+import PrivateRoute from "./components/privateRoute";
+import Error404 from "./components/Error404";
+import ProductDetails from "./components/ProductDetails";
+// import { useAuth } from "./components/context/AuthContext";
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <Nav />
         <AuthProvider>
+          <Nav />
           <ProductProvider>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/bookmark" element={<BookMark />} />
+              <Route
+                path="/bookmark"
+                element={
+                  <PrivateRoute>
+                    <BookMark />
+                  </PrivateRoute>
+                }
+              />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/details/:id" element={<ProductDetails />} />
+              <Route path="*" element={<Error404 />} />
             </Routes>
           </ProductProvider>
         </AuthProvider>

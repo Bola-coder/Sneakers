@@ -1,33 +1,33 @@
-.signup {
-  max-width: 540px;
-  padding: 10px;
-  margin: 20px auto;
+.login {
+  max-width: 500px;
+  padding: 20px;
+  margin: 30px auto;
   border: 3px solid hsl(26, 72%, 46%);
   /* height: 80vh; */
   border-radius: 10px;
 }
 
-.signup__text {
+.login__text {
   font-size: 2rem;
   color: hsl(26, 100%, 55%);
   text-align: center;
   font-weight: 700;
 }
 
-.signup form {
-  margin-left: 20px;
+.login form {
+  /* margin-left: 20px; */
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.signup label {
+.login label {
   font-size: 1.2rem;
   padding: 10px;
 }
 
-.signup input {
+.login input {
   width: 400px;
   padding: 15px;
   border: 1px solid hsl(26, 100%, 55%);
@@ -36,12 +36,12 @@
   transition: all 0.5s ease-in-out;
 }
 
-.signup input:focus {
+.login input:focus {
   outline: none;
   width: 420px;
 }
 
-.signup button {
+.login button {
   margin-top: 30px;
   width: 200px;
   padding: 12px;
@@ -53,16 +53,16 @@
   cursor: pointer;
 }
 
-.signup button:hover {
+.login button:hover {
   background: hsl(26, 93%, 48%);
 }
 
-.signup button:disabled {
+.login button:disabled {
   background: #bbb;
   cursor: not-allowed;
 }
 
-.signup__link-text {
+.login__link-text {
   font-size: 1.2rem;
   color: hsl(26, 100%, 55%);
   text-align: center;
@@ -71,65 +71,65 @@
 }
 
 @media screen and (max-width: 768px) {
-  .signup {
+  .login {
     max-width: 500px;
     margin-top: 50px;
   }
-  .signup form {
+  .login form {
     margin-left: 0;
     padding: 20px;
   }
 
-  .signup input {
+  .login input {
     width: 380px;
   }
 
-  .signup input:focus {
+  .login input:focus {
     width: 400px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .signup {
+  .login {
     max-width: 380px;
   }
 
-  .signup label {
+  .login label {
     font-size: 1rem;
   }
-  .signup input {
+  .login input {
     width: 300px;
     margin-bottom: 10px;
   }
 
-  .signup input:focus {
+  .login input:focus {
     width: 320px;
   }
 
-  .signup button {
+  .login button {
     width: 170px;
     font-size: 1rem;
   }
 
-  .signup__link-text {
+  .login__link-text {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 375px) {
-  .signup {
+  .login {
     max-width: 300px;
   }
 
-  .signup input {
+  .login input {
     width: 220px;
   }
 
-  .signup input:focus {
+  .login input:focus {
     width: 230px;
   }
 
-  .signup button {
+  .login button {
     width: 130px;
   }
 }

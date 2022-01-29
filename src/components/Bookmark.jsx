@@ -12,12 +12,8 @@ const BookMark = () => {
             return (
               <Fragment key={index}>
                 <div className="bookmark" key={prod.id}>
-                  <img
-                    src={prod.image.original}
-                    alt={prod.name}
-                    width="250px"
-                  />
-                  <p>{prod.name}</p>
+                  <img src={prod.image} alt={prod.title} width="250px" />
+                  <p>{prod.title}</p>
                   <button>Remove bookmark</button>
                 </div>
               </Fragment>

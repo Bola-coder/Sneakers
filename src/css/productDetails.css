@@ -1,0 +1,38 @@
+main {
+  padding: 20px;
+}
+
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.left {
+  flex-basis: 55%;
+}
+.left h2 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: hsl(26, 81%, 46%);
+}
+
+.left p {
+  margin-top: 30px;
+  font-size: 1.3rem;
+}
+
+.price {
+  color: hsl(26, 100%, 55%);
+  font-weight: bolder;
+}
+.right {
+  flex-basis: 25%;
+}
+
+.right img {
+  width: 300px;
+  object-fit: cover;
+}

@@ -18,6 +18,10 @@
   width: 250px;
 } */
 
+.bookmark img {
+  width: 200px;
+}
+
 .bookmark button {
   margin-top: 15px;
   padding: 10px 15px;

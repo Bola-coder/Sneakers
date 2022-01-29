@@ -15,10 +15,14 @@ nav {
 }
 
 .menu h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-right: 30px;
+  color: hsl(26, 75%, 42%);
 }
 
+.menu a {
+  text-decoration: none;
+}
 .menu h2,
 p {
   padding: 4px 10px;

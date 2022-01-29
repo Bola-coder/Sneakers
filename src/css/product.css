@@ -29,3 +29,9 @@
 .product svg:hover {
   color: hsl(26, 100%, 55%);
 }
+
+.product img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+}
