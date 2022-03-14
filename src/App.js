@@ -11,7 +11,6 @@ import Login from "./components/Login";
 import PrivateRoute from "./components/privateRoute";
 import Error404 from "./components/Error404";
 import ProductDetails from "./components/ProductDetails";
-// import { useAuth } from "./components/context/AuthContext";
 
 function App() {
   return (

@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { auth, db } from "../../firebase";
+import { auth } from "../../firebase";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { collection, addDoc, getDoc, getDocs, doc } from "firebase/firestore";
+// import { collection, addDoc, getDocs } from "firebase/firestore";
 
 const AuthContext = createContext();
 
@@ -19,35 +19,28 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsuscribe = onAuthStateChanged(auth, (user) => {
+      // let allData = [];
       if (user) {
         setCurrentUser(user);
         console.log(user);
-        const colRef = collection(db, "userData");
+        // const colRef = collection(db, "userData");
 
-        // Getting all the user in the database and checking if the user exist already
+        // // Getting all the document (users) in the database
         // getDocs(colRef).then((snapshot) => {
-        //   console.log(snapshot);
         //   snapshot.docs.forEach((doc) => {
-        //     console.log(doc);
+        //     allData.push(...doc.data())
         //   });
         // });
-        // const docRef = doc(db, "userData", user);
-        // getDoc(docRef).then((docSnap) => {
-        //   if (docSnap.exists()) {
-        //     console.log("Document:" + docSnap.data());
-        //   } else {
-        //     console.log("No document found");
-        //   }
-        // });
 
-        // Adding the user to the database
-        addDoc(colRef, {
-          email: user.email,
-          name: user.displayName,
-          uid: user.uid,
-        })
-          .then(console.log("Document sent successfully"))
-          .catch((err) => console.log(err.message));
+        // // Checking if allData is not empty
+        // if(allData.length > 0){
+        //   // Checking if user doesn't exist yet and oushing user to firebase if user doesn't exist.
+        //   allData.forEach(data => {
+        //     if(data.uid == user.uid){
+
+        //     }
+        //   })
+        // }
       }
     });
 

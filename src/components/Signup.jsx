@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useAuth } from "./context/AuthContext";
 import { useNavigate } from "react-router-dom";
-
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "./../firebase.js";
 import "./../css/signup.css";
 const Signup = () => {
   const { signup } = useAuth();
@@ -20,7 +21,19 @@ const Signup = () => {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      let result = await signup(
+        emailRef.current.value,
+        passwordRef.current.value
+      );
+      // Add new user to firestore databse
+      const colRef = collection(db, "userData");
+      addDoc(colRef, {
+        userEmail: result.user.email,
+        userUID: result.user.uid,
+        userBookmarks: [],
+      });
+
+      console.log(result);
       navigate("/");
     } catch (err) {
       setError(err.message);

@@ -13,7 +13,7 @@ const UseProduct = (url) => {
       .then((response) => response.json())
       .then((data) => {
         // data = data.results;
-        console.log(data);
+        // console.log(data);
         setProducts(data);
         setLoading(false);
       })
