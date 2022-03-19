@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useAuth } from "./context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { db } from "./../firebase.js";
 import "./../css/signup.css";
 const Signup = () => {
@@ -69,7 +70,9 @@ const Signup = () => {
             Sign Up
           </button>
         </form>
-        <h4 className="signup__link-text">Already have an account? Log In</h4>
+        <h4 className="signup__link-text">
+          Already have an account?<Link to="/login">Log In</Link>
+        </h4>
       </div>
     </>
   );

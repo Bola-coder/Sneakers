@@ -21,6 +21,15 @@
   box-shadow: 2px 2px 8px rgb(211, 206, 206);
 }
 
+.product a {
+  text-decoration: none;
+}
+
+.product p {
+  color: hsl(26, 100%, 55%);
+  font-size: 1.1rem;
+}
+
 .product svg {
   font-size: 25px;
   color: #777;

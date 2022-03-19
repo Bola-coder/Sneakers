@@ -50,7 +50,7 @@ function Nav() {
         {currentUser ? (
           currentUser.email
         ) : (
-          <div>
+          <div className="links">
             <Link to="/signup">
               <button>SignUp</button>
             </Link>

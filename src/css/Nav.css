@@ -53,9 +53,24 @@ p:hover {
   color: hsl(26, 75%, 42%);
 }
 
-.profile img {
+/* .profile img {
   width: 40px;
   object-fit: contain;
+} */
+
+/* .links {
+  padding: 5px;
+} */
+.links button {
+  margin-left: 7px;
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-color: hsl(26, 100%, 55%);
 }
 
 @media screen and (max-width: 768px) {
@@ -87,8 +102,9 @@ p:hover {
   }
 
   .hamburger h2 {
-    letter-spacing: 2px;
-    cursor: pointer;
+    /* letter-spacing: 2px;
+    cursor: pointer; */
+    display: none;
   }
 
   .hamburger h2:hover {

@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "./../css/login.css";
 
 const Login = () => {
-  const { login, currentUser } = useAuth();
+  const { login } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const emailRef = useRef();
