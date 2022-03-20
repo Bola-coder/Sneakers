@@ -9,7 +9,7 @@ const UseProduct = (url) => {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    fetch(url, { signal })
+    fetch(url, { signal: signal })
       .then((response) => response.json())
       .then((data) => {
         // data = data.results;
