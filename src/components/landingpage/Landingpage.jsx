@@ -1,5 +1,6 @@
 import React from 'react';
 import Style from './sass/style.module.scss';
+import shirt from './img/shirt.png'
 const Landingpage = () => {
     let lorem = document.getElementById("lorem");
     let text = "Lorem Ipsum has been the industry's standard dummy....";
@@ -12,19 +13,19 @@ const Landingpage = () => {
         }
     }
     setInterval(writeText, 150)
-    window.addEventListener('load', function() {
+  /*   window.addEventListener('load', function () {
         writeText()
-    })
+    }) */
 
     return (
         <section className={Style.homesection}>
-            <h3 className={Style.bannerText}>Checkout New Wares</h3>
-            <h1 className={Style.mensText}><strong>We Might Have What You Like</strong></h1>
-            <p id='lorem' /* onLoad={writeText} */></p>
+            <div className={Style.hometext}>
+                <h3 className={Style.bannerText}>Checkout Our New Wares.</h3>
+                <h1 className={Style.mensText}><strong>We  Might Have What You Like.</strong></h1>
+                <p id='lorem' onLoad={writeText}/>
+            </div>
+            <img alt='shirt' src={shirt} />
         </section>
-
-
-
     )
 }
 export default Landingpage;

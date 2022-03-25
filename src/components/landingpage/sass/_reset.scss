@@ -17,10 +17,13 @@ body {
     overflow: auto;
     box-sizing: border-box;
     color: $textColor;
+    @include media($tv) {
+        @include flex(column, center, center);
+    }
 }
 
 h1 {
-    @include heading;
+    display: block;
 }
 
 button {
@@ -31,7 +34,6 @@ button {
 form {
     width: 100%;
     margin: 1em 0 3em 0;
-
     @include media($tablet) {
         margin: 0;
         @include flex(column, center, flex-start);
@@ -59,4 +61,7 @@ a {
     &:hover{
         color: $sneakerorange;
     }
+}
+img{
+    max-width: 250px;
 }
