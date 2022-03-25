@@ -15,13 +15,15 @@ function Nav() {
   return (
     <nav>
       <div className="menu">
-        <Link to="/">
+        <Link to="/landingpage">
           <h2>Sneakers</h2>
         </Link>
         <Link to="/landingpage">
           <p>Home page</p>
         </Link>
-        <p>Collections</p>
+        <Link to="/">
+          <p>Collections</p>
+        </Link>
         <p>Men</p>
         <p>Women</p>
         <p>About</p>
@@ -40,7 +42,9 @@ function Nav() {
             <Link to="/landingpage">
               <p>Home page</p>
             </Link>
-            <p>Collections</p>
+            <Link to="/">
+              <p>Collections</p>
+            </Link>
             <p>Men</p>
             <p>Women</p>
             <p>About</p>
