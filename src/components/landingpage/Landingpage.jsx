@@ -22,7 +22,9 @@ const Landingpage = () => {
             <h1 className={Style.mensText}><strong>We Might Have What You Like</strong></h1>
             <p id='lorem' /* onLoad={writeText} */></p>
         </section>
-        
+
+
+
     )
 }
 export default Landingpage;
