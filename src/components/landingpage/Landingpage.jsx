@@ -20,7 +20,7 @@ const Landingpage = () => {
         <section className={Style.homesection}>
             <h3 className={Style.bannerText}>Checkout New Wares</h3>
             <h1 className={Style.mensText}><strong>We Might Have What You Like</strong></h1>
-            <p id='lorem'  /* onLoad={writeText} */></p>
+            <p id='lorem' /* onLoad={writeText} */></p>
         </section>
     )
 }

@@ -19,7 +19,7 @@ function Nav() {
           <h2>Sneakers</h2>
         </Link>
         <Link to="/landingpage">
-          <p>Home page</p>
+          Home page
         </Link>
         <Link to="/">
           <p>Collections</p>
