@@ -26,8 +26,9 @@
 }
 
 .product p {
-  color: hsl(26, 100%, 55%);
+  /* color: hsl(26, 100%, 55%); */
   font-size: 1.1rem;
+  color: #000;
 }
 
 .product svg {

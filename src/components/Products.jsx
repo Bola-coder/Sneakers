@@ -4,17 +4,49 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
+import {
+  getDocs,
+  collection,
+  updateDoc,
+  arrayUnion,
+  doc,
+} from "firebase/firestore";
+import { db } from "./../firebase.js";
 
 const Product = ({ products, loading, error, bookmarked, setBookmarked }) => {
-  const handleBookmarks = (id) => {
-    const newProduct = products.filter((prod) => id === prod.id);
-    console.log(products);
-    console.log(newProduct[0]);
-    if (!bookmarked.includes(newProduct[0])) {
-      setBookmarked((prev) => [...prev, newProduct[0]]);
+  // const handleBookmarks = (id) => {
+  //   const newProduct = products.filter((prod) => id === prod.id);
+  //   console.log(products);
+  //   console.log(newProduct[0]);
+  //   if (!bookmarked.includes(newProduct[0])) {
+  //     setBookmarked((prev) => [...prev, newProduct[0]]);
+  //   }
+  // };
+
+  const { currentUser } = useAuth();
+  const colRef = collection(db, "userData");
+  // Function that adds new document to Cart.
+  const addToCart = (id) => {
+    if (currentUser) {
+      getDocs(colRef).then((snapshot) => {
+        snapshot.docs.forEach((docu) => {
+          if (currentUser.uid === docu.data().userID) {
+            const newProduct = products.filter((prod) => prod.id === id);
+            if (newProduct) {
+              const docRef = doc(colRef, docu.id);
+              updateDoc(docRef, {
+                userCarts: arrayUnion(newProduct[0]),
+              })
+                .then(console.log("Cart Added successfully"))
+                .catch((err) => console.log(err));
+            }
+          }
+        });
+      });
     }
   };
-
+  // addToCart();
   return (
     <div className="container">
       {loading ? (
@@ -30,7 +62,7 @@ const Product = ({ products, loading, error, bookmarked, setBookmarked }) => {
                 <div className="bookmark-icon">
                   <FontAwesomeIcon
                     icon={faHeart}
-                    onClick={() => handleBookmarks(prod.id)}
+                    onClick={() => addToCart(prod.id)}
                   />
                 </div>
 

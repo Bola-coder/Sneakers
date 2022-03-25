@@ -24,14 +24,14 @@ nav {
   text-decoration: none;
 }
 .menu h2,
-p {
+.menu p {
   padding: 4px 10px;
   letter-spacing: 2px;
   cursor: pointer;
 }
 
 .menu h2:hover,
-p:hover {
+.menu p:hover {
   color: hsl(26, 100%, 55%);
 }
 
