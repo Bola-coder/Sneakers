@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import PrivateRoute from "./components/privateRoute";
 import Error404 from "./components/Error404";
 import ProductDetails from "./components/ProductDetails";
+import Landingpage from "./components/landingpage/Landingpage"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                   </PrivateRoute>
                 }
               />
+              <Route path="/landingpage" element={<Landingpage/>}></Route>
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/details/:id" element={<ProductDetails />} />
