@@ -22,7 +22,7 @@ function Nav() {
           Home
         </Link>
         <Link to="/">
-          <p>Collections</p>
+          Collections
         </Link>
         <p>Men</p>
         <p>Women</p>
