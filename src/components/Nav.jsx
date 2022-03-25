@@ -18,6 +18,9 @@ function Nav() {
         <Link to="/">
           <h2>Sneakers</h2>
         </Link>
+        <Link to="/landingpage">
+          <p>Home page</p>
+        </Link>
         <p>Collections</p>
         <p>Men</p>
         <p>Women</p>
@@ -34,6 +37,9 @@ function Nav() {
         {showMenu ? (
           <div className="mobile-content">
             <FontAwesomeIcon icon={faTimes} onClick={onHamburgerClick} />
+            <Link to="/landingpage">
+              <p>Home page</p>
+            </Link>
             <p>Collections</p>
             <p>Men</p>
             <p>Women</p>
