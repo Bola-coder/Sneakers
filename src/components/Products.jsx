@@ -57,12 +57,9 @@ const Product = ({ products, loading, error, cart, setCart }) => {
         {products
           ? products.map((prod) => (
               <div className="product" key={prod.id}>
-                <div className="bookmark-icon">
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    onClick={() => addToCart(prod.id)}
-                  />
-                </div>
+                {/* <div className="bookmark-icon">
+                  <FontAwesomeIcon icon={faHeart} />
+                </div> */}
 
                 <img
                   src={prod.image ? prod.image : noImage}
@@ -76,6 +73,9 @@ const Product = ({ products, loading, error, cart, setCart }) => {
                       : `${prod.title.slice(0, 40)}...`}
                   </p>
                 </Link>
+                <button onClick={() => addToCart(prod.id)}>
+                  Add to Carts{" "}
+                </button>
               </div>
             ))
           : ""}
