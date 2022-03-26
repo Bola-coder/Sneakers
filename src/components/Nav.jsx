@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import Logout from "./Logout";
+
 // import Avatar from "../images/image-avatar.png";
 import "./../css/Nav.css";
 
@@ -48,7 +50,10 @@ function Nav() {
         </Link>
         {/* <img src={Avatar} alt="Avatar" /> */}
         {currentUser ? (
-          currentUser.email
+          <div className="current">
+            <p>{currentUser.email}</p>
+            <Logout />
+          </div>
         ) : (
           <div className="links">
             <Link to="/signup">

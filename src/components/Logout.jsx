@@ -6,20 +6,20 @@ const Logout = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      console.log("Sign out success");
+      alert("Sign out success");
       setCurrentUser("");
     } catch (err) {
       console.log(err.message);
     }
   };
   return (
-    <div className="logout" style={{ padding: "20px" }}>
+    <div className="logout">
       <button
         style={{
-          padding: "10px 10px",
-          backgroundColor: "green",
+          padding: "10px 15px",
+          backgroundColor: "hsl(26, 100%, 55%)",
           color: "#fff",
-          fontSize: " 20px",
+          fontSize: " 16px",
           border: "none",
           borderRadius: "10px",
         }}

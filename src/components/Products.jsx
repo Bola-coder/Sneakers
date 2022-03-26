@@ -26,6 +26,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
           if (currentUser.uid === docu.data().userID) {
             const newProduct = products.filter((prod) => prod.id === id);
             if (newProduct) {
+              // Getting a reference to the current document
               const docRef = doc(colRef, docu.id);
               updateDoc(docRef, {
                 userCarts: arrayUnion(newProduct[0]),
@@ -43,6 +44,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
     }
   };
   // End of cart function
+
   return (
     <div className="container">
       {loading ? (
