@@ -9,13 +9,14 @@ const UseProduct = (url) => {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
+    setProducts([]);
     fetch(url, { signal: signal })
       .then((response) => response.json())
       .then((data) => {
         // data = data.results;
         // console.log(data);
-        setProducts(data);
         setLoading(false);
+        setProducts(data);
       })
       .catch((err) => {
         setLoading(false);
