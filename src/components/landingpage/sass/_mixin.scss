@@ -1,0 +1,103 @@
+@mixin heading{
+    text-align: center;
+    font-size: $headingFontSize;
+}
+@mixin btn {
+    background: $altTextColor;
+    border-radius: $borderradius;
+    border: none;
+    padding: $padding;
+    width: 100%;
+    margin-top: 1em;
+    white-space: nowrap;
+    font-size: 14px;
+    color: $textColor;
+}
+@mixin media($device:$tablet, $type:min) {
+    @media only screen and (#{$type}-width:$device) {
+      @content;
+    }
+  }
+@mixin flex($fd, $justify, $align) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $justify;
+    align-items: $align;
+    @content;
+}
+@mixin btn2 {
+    @include btn();
+    width: 40%;
+    font-size: 16px;
+}
+
+@mixin form {
+    @include flex2();
+    width: 90%;
+    margin-top: 1em;
+}
+
+@mixin form2 {
+    @include form();
+    width: 70%;
+}
+
+@mixin label {
+    font: {
+        size: 14px;
+        weight: 900;
+    }
+    line-height: 1.8;
+    color: $labelColor;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+@mixin input {
+    margin-bottom: 1.5em;
+    background-color: $altTextColor;
+    border: none;
+    box-sizing: border-box;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    min-height: 45px;
+    max-height: 30px;
+    width: 100%;
+    max-width: 100%;
+    color: $labelColor;
+    &:focus {
+        
+        border-color: $btn_backgroundColor;
+    }
+}
+
+@mixin input2 {
+    @include input();
+    padding: 10px;
+}
+
+@mixin continue_btn {
+    @include btn();
+    @include active-btn();
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1em;
+    min-height: 45px;
+    max-height: 40px;
+}
+
+@mixin continue_btn2 {
+    @include btn2();
+    @include continue_btn();
+}
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

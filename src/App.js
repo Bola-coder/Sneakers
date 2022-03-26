@@ -12,6 +12,7 @@ import Cart from "./components/Cart";
 // import PrivateRoute from "./components/privateRoute";
 import Error404 from "./components/Error404";
 import ProductDetails from "./components/ProductDetails";
+import Landingpage from "./components/landingpage/Landingpage"
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Nav />
           <ProductProvider>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Landingpage />} />
               {/* <Route
                 path="/cart"
                 element={
@@ -29,7 +30,10 @@ function App() {
                     <Cart />
                   </PrivateRoute>
                 }
-              /> */}
+
+              />
+              */}
+              <Route path="/collections" element={<Home/>}></Route>
               <Route path="/cart" element={<Cart />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
