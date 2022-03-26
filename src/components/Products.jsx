@@ -13,6 +13,8 @@ import {
   doc,
 } from "firebase/firestore";
 import { db } from "./../firebase.js";
+// Importing loader commponent
+import Loader from "./utilities/Loader";
 
 const Product = ({ products, loading, error, cart, setCart }) => {
   const { currentUser } = useAuth();
@@ -48,11 +50,14 @@ const Product = ({ products, loading, error, cart, setCart }) => {
   return (
     <div className="container">
       {loading ? (
-        <p className="loading-error">Loading Products... Please Wait.</p>
+        <div className="loading">
+          <Loader />
+          <p className="loading-text">Loading Products... Please Wait.</p>
+        </div>
       ) : (
         ""
       )}
-      {error ? <p className="loading-error">{error}</p> : ""}
+      {error ? <p className="load-error">{error}</p> : ""}
       <div className="products">
         {products
           ? products.map((prod) => (
