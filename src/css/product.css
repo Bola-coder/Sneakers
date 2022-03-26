@@ -20,7 +20,7 @@
   margin: 15px 0;
   background-color: #fff;
   box-shadow: 2px 2px 8px rgb(211, 206, 206);
-  transition: all 0.5 ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .product a {
@@ -50,7 +50,7 @@
 }
 
 .product button {
-  margin-top: 5px;
+  margin-top: 15px;
   padding: 8px 15px;
   border: 0;
   border-radius: 5px;
@@ -65,4 +65,13 @@
   background-color: hsl(26, 100%, 55%);
   transform: scale(1.05);
   border-radius: 10px;
+}
+
+.product:hover p {
+  color: #fff;
+}
+
+.product:hover button {
+  background-color: #fff;
+  color: hsl(26, 100%, 55%);
 }

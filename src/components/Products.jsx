@@ -1,7 +1,7 @@
 import React from "react";
 import "./../css/product.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
@@ -48,7 +48,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
   return (
     <div className="container">
       {loading ? (
-        <p className="loading-error">Loading Sneakers... Please Wait.</p>
+        <p className="loading-error">Loading Products... Please Wait.</p>
       ) : (
         ""
       )}
