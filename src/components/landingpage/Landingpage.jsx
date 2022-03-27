@@ -1,8 +1,12 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from './sass/style.module.scss';
 import Images from './img/Images';
 import { Link } from "react-router-dom";
 const Landingpage = () => {
+    const [active, setActive] = useState(0)
+    const showProducts = (index) => {
+        setActive(index)
+    }
     useEffect(() => {
         document.title = 'Sneakers'
         let lorem = document.getElementById("lorem");
@@ -18,16 +22,12 @@ const Landingpage = () => {
         setInterval(writeTexts, 150)
         window.addEventListener('load', function () {
             writeTexts()
+            showProducts()
         })
         console.log(lorem)
     }
     )
-    const [active, setActive] = useState(0)
-  
 
-    const roducts = () => {
-        
-    }
     return (
         <section className={Style.homesection}>
             <div className={Style.hometext}>

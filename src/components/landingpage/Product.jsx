@@ -7,18 +7,18 @@ export const PRODUCTS =
         },
         {
             "title": "Devices",
-            "questionsContainer": `${Images.device}`
+            "photo": `${Images.device}`
         },
         {
             "title": "Appliances",
-            "questionsContainer": `${Images.appliances}`
+            "photo": `${Images.appliances}`
         },
         {
             "title": "Acessories",
-            "questionsContainer":`${Images.acessories}`
+            "photo":`${Images.acessories}`
         },
         {
             "title": "Gadgets",
-            "questionsContainer":`${Images.gadgets}`
+            "photo":`${Images.gadgets}`
         }
     ]
