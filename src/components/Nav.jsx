@@ -38,9 +38,6 @@ function Nav() {
         {showMenu ? (
           <div className="mobile-content">
             <FontAwesomeIcon icon={faTimes} onClick={onHamburgerClick} />
-            {/* <Link to="/">
-              <p>Home</p>
-            </Link> */}
             <Link to="/collections">
               <p>Collections</p>
             </Link>
