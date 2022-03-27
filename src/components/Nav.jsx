@@ -21,9 +21,9 @@ function Nav() {
           <h2>Sneakers</h2>
         </Link>
         
-       {/*  <Link to="/landingpage">
+       { <Link to="/landingpage">
           Home
-        </Link> */}
+        </Link>}
         <Link to="/">
           Collections
         </Link>

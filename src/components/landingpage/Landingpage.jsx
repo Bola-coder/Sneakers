@@ -3,12 +3,10 @@ import Style from './sass/style.module.scss';
 import shirt from './img/shirt.png'
 import { Link } from "react-router-dom";
 const Landingpage = () => {
-    useEffect(() => { document.title='Signup'})
+    useEffect(() => { document.title='Sneakers'
     let lorem = document.getElementById("lorem");
     let text = "Lorem Ipsum has been the industry's standard dummy....";
     let index = 0;
-    const [writeText, setwriteText] = useState(false)
-
     function writeTexts(){
         lorem.innerHTML = text.slice(0, index);
         index++;
@@ -19,9 +17,10 @@ const Landingpage = () => {
     setInterval(writeTexts, 150)
     window.addEventListener('load', function () {
         writeTexts()
-        setwriteText(true)
     })
     console.log(lorem)
+}
+    )
 
     return (
         <section className={Style.homesection}>
