@@ -56,9 +56,7 @@ small {
 }
 
 a {
-    letter-spacing: 2px;
-    color: $textColor;
-    padding: 10px;
+    border: none;
     &:hover{
         color: $sneakerorange;
     }
