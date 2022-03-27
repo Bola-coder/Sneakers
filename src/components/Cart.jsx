@@ -12,7 +12,7 @@ const Cart = () => {
         <div className="cart-text">
           <h4>Your cart is empty</h4>
           <p>Browse our product to start shopping</p>
-          <Link to="/collections">
+          <Link to="/">
             {" "}
             <button>Browse Product</button>
           </Link>
