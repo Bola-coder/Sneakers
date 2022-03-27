@@ -24,14 +24,14 @@ nav {
   text-decoration: none;
 }
 .menu h2,
-p {
+.menu p {
   padding: 4px 10px;
   letter-spacing: 2px;
   cursor: pointer;
 }
 
 .menu h2:hover,
-p:hover {
+.menu p:hover {
   color: hsl(26, 100%, 55%);
 }
 
@@ -61,6 +61,21 @@ p:hover {
 /* .links {
   padding: 5px;
 } */
+
+.current {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.current p {
+  padding: 7px;
+}
+
+.current button:hover {
+  opacity: 0.9;
+}
 .links button {
   margin-left: 7px;
   padding: 8px 15px;

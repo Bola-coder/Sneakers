@@ -30,8 +30,8 @@ const Signup = () => {
       const colRef = collection(db, "userData");
       addDoc(colRef, {
         userEmail: result.user.email,
-        userUID: result.user.uid,
-        userBookmarks: [],
+        userID: result.user.uid,
+        userCarts: [],
       });
 
       console.log(result);

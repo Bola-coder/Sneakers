@@ -1,0 +1,29 @@
+.cart {
+  padding: 20px;
+}
+
+.cart-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cart-text h4 {
+  font-size: 1.5rem;
+  padding: 7px;
+}
+
+.cart-text p {
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.cart-text button {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+  background-color: hsl(26, 100%, 55%);
+  color: #fff;
+  cursor: pointer;
+}

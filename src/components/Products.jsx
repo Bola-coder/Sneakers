@@ -4,16 +4,46 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
+import {
+  getDocs,
+  collection,
+  updateDoc,
+  arrayUnion,
+  doc,
+} from "firebase/firestore";
+import { db } from "./../firebase.js";
 
-const Product = ({ products, loading, error, bookmarked, setBookmarked }) => {
-  const handleBookmarks = (id) => {
-    const newProduct = products.filter((prod) => id === prod.id);
-    console.log(products);
-    console.log(newProduct[0]);
-    if (!bookmarked.includes(newProduct[0])) {
-      setBookmarked((prev) => [...prev, newProduct[0]]);
+const Product = ({ products, loading, error, cart, setCart }) => {
+  const { currentUser } = useAuth();
+  const colRef = collection(db, "userData");
+  // Function that adds new document to Cart.
+  const addToCart = (id) => {
+    if (currentUser) {
+      getDocs(colRef).then((snapshot) => {
+        snapshot.docs.forEach((docu) => {
+          // Check if the the id is the same as that of current user
+          if (currentUser.uid === docu.data().userID) {
+            const newProduct = products.filter((prod) => prod.id === id);
+            if (newProduct) {
+              // Getting a reference to the current document
+              const docRef = doc(colRef, docu.id);
+              updateDoc(docRef, {
+                userCarts: arrayUnion(newProduct[0]),
+              })
+                .then(() => {
+                  console.log("Cart Added successfully");
+                  setCart(docu.data().userCarts);
+                  console.log(docu.data().userCarts);
+                })
+                .catch((err) => console.log(err));
+            }
+          }
+        });
+      });
     }
   };
+  // End of cart function
 
   return (
     <div className="container">
@@ -27,12 +57,9 @@ const Product = ({ products, loading, error, bookmarked, setBookmarked }) => {
         {products
           ? products.map((prod) => (
               <div className="product" key={prod.id}>
-                <div className="bookmark-icon">
-                  <FontAwesomeIcon
-                    icon={faHeart}
-                    onClick={() => handleBookmarks(prod.id)}
-                  />
-                </div>
+                {/* <div className="bookmark-icon">
+                  <FontAwesomeIcon icon={faHeart} />
+                </div> */}
 
                 <img
                   src={prod.image ? prod.image : noImage}
@@ -46,6 +73,9 @@ const Product = ({ products, loading, error, bookmarked, setBookmarked }) => {
                       : `${prod.title.slice(0, 40)}...`}
                   </p>
                 </Link>
+                <button onClick={() => addToCart(prod.id)}>
+                  Add to Carts{" "}
+                </button>
               </div>
             ))
           : ""}
