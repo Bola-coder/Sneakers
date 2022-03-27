@@ -20,11 +20,7 @@ function Nav() {
         <Link to="/">
           <h2>Sneakers</h2>
         </Link>
-        
-       { <Link to="/landingpage">
-          Home
-        </Link>}
-        <Link to="/">
+        <Link to="/collections">
           Collections
         </Link>
         <p>Men</p>

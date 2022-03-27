@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React,{ useEffect} from 'react';
 import Style from './sass/style.module.scss';
 import shirt from './img/shirt.png'
 import { Link } from "react-router-dom";
