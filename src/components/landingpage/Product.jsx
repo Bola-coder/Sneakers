@@ -1,24 +1,24 @@
-
+import Images from "./img/Images"
 export const PRODUCTS =
     [
         {
             "title": "Wares",
-            "photo": "What is Acadonline?"
+            "photo": `${Images.wares}`
         },
         {
             "title": "Devices",
-            "questionsContainer": "What is Qshe?"
+            "questionsContainer": `${Images.device}`
         },
         {
             "title": "Appliances",
-            "questionsContainer": "What is Qshe?"
+            "questionsContainer": `${Images.appliances}`
         },
         {
             "title": "Acessories",
-            "questionsContainer":"What"
+            "questionsContainer":`${Images.acessories}`
         },
         {
             "title": "Gadgets",
-            "questionsContainer":"What"
+            "questionsContainer":`${Images.gadgets}`
         }
     ]

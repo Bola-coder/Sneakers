@@ -39,7 +39,7 @@ const Landingpage = () => {
                     <Link to='/collections'><button>See More</button></Link>
                 </span>
             </div>
-            <img alt='shirt' src={Images.wares} />
+            <img alt='shirt' src={Images.acessories} />
         </section>
     )
 
