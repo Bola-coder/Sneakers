@@ -20,17 +20,12 @@ function Nav() {
         <Link to="/">
           <h2>Sneakers</h2>
         </Link>
-<<<<<<< HEAD
-        <Link to="/landingpage">
+        
+       {/*  <Link to="/landingpage">
           Home
-        </Link>
+        </Link> */}
         <Link to="/">
           Collections
-=======
-        {/* <Link to="/">Home</Link> */}
-        <Link to="/collections">
-          <p>Collections</p>
->>>>>>> origin
         </Link>
         <p>Men</p>
         <p>Women</p>
