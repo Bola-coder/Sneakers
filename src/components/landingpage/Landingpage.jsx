@@ -37,5 +37,6 @@ const Landingpage = () => {
             <img alt='shirt' src={shirt} />
         </section>
     )
+    
 }
 export default Landingpage;
