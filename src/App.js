@@ -13,6 +13,7 @@ import Cart from "./components/Cart";
 import Error404 from "./components/Error404";
 import ProductDetails from "./components/ProductDetails";
 import Landingpage from "./components/landingpage/Landingpage"
+import Development from "./components/landingpage/Development"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               />
               */}
               <Route path="/collections" element={<Home/>}></Route>
+              <Route path="/development" element={<Development/>}></Route>
               <Route path="/cart" element={<Cart />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
