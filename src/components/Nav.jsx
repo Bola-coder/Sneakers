@@ -17,14 +17,20 @@ function Nav() {
   return (
     <nav>
       <div className="menu">
-        <Link to="/landingpage">
+        <Link to="/">
           <h2>Sneakers</h2>
         </Link>
+<<<<<<< HEAD
         <Link to="/landingpage">
           Home
         </Link>
         <Link to="/">
           Collections
+=======
+        {/* <Link to="/">Home</Link> */}
+        <Link to="/collections">
+          <p>Collections</p>
+>>>>>>> origin
         </Link>
         <p>Men</p>
         <p>Women</p>
@@ -41,10 +47,10 @@ function Nav() {
         {showMenu ? (
           <div className="mobile-content">
             <FontAwesomeIcon icon={faTimes} onClick={onHamburgerClick} />
-            <Link to="/landingpage">
+            {/* <Link to="/">
               <p>Home</p>
-            </Link>
-            <Link to="/">
+            </Link> */}
+            <Link to="/collections">
               <p>Collections</p>
             </Link>
             <p>Men</p>
