@@ -29,8 +29,8 @@ const Landingpage = () => {
                 <h1 className={Style.mensText}><strong>We  Might Have What You Like..</strong></h1>
                 <p id='lorem' className={`${Style.mobile}`}>  </p>
                 <span> 
-                    <Link to='/'><button>Buy Now</button></Link>
-                    <Link to='/'><button>See More</button></Link>
+                    <Link to='/login'><button>Buy Now</button></Link>
+                    <Link to='/collections'><button>See More</button></Link>
                 </span>
             </div>
             <img alt='shirt' src={shirt} />

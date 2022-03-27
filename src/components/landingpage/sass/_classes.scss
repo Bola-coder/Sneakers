@@ -17,7 +17,7 @@
     @include media($tablet) {
         padding: 0 $paddingsideDesktop;
         @include flex(row, space-between, center);
-        height: 83vh;
+        height: 76.5vh;
         background: linear-gradient(to bottom right, $sneakerorange, rgba(90, 84, 78, 0.863));
     }
 }
@@ -29,9 +29,10 @@
     line-height: 1.5;
     height: 30vh;
     color: $altTextColor;
-
+    
     @include media($tablet) {
         padding: 0;
+        height:auto;
         line-height: 1.5;
         width: 50%;
     }
@@ -53,6 +54,7 @@
     }
 
     p {
+        margin-left: 5px;
         height: 8vh;
         &:hover{
             color: $altTextColor;
