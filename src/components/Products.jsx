@@ -1,7 +1,5 @@
 import React from "react";
 import "./../css/product.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
@@ -19,7 +17,9 @@ import Loader from "./utilities/Loader";
 const Product = ({ products, loading, error, cart, setCart }) => {
   const { currentUser } = useAuth();
   const colRef = collection(db, "userData");
+  let cartItems = [];
   // Function that adds new document to Cart.
+
   const addToCart = (id) => {
     if (currentUser) {
       getDocs(colRef).then((snapshot) => {
@@ -35,7 +35,8 @@ const Product = ({ products, loading, error, cart, setCart }) => {
               })
                 .then(() => {
                   console.log("Cart Added successfully");
-                  setCart(docu.data().userCarts);
+                  cartItems = [...docu.data().userCarts];
+                  // setCart(docu.data().userCarts);
                   console.log(docu.data().userCarts);
                 })
                 .catch((err) => console.log(err));
@@ -46,7 +47,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
     }
   };
   // End of cart function
-
+  console.log(cartItems);
   return (
     <div className="container">
       {loading ? (
@@ -61,11 +62,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
       <div className="products">
         {products
           ? products.map((prod) => (
-              <div className="product" key={prod.id}>
-                {/* <div className="bookmark-icon">
-                  <FontAwesomeIcon icon={faHeart} />
-                </div> */}
-
+              <div className="product" key={prod.id}> 
                 <img
                   src={prod.image ? prod.image : noImage}
                   alt={prod.name}
