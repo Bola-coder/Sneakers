@@ -1,3 +1,11 @@
+.mobile {
+    display: none;
+
+    @include media($tablet) {
+        display: block;
+    }
+}
+
 .homesection {
     height: 92.8vh;
     width: 100%;
@@ -5,7 +13,7 @@
     padding: 0;
     margin: 0;
     background: linear-gradient(to bottom right, $sneakerorange, rgba(155, 105, 55, 0.863));
-    
+
     @include media($tablet) {
         padding: 0 $paddingsideDesktop;
         @include flex(row, space-between, center);
@@ -17,30 +25,67 @@
 .hometext {
     width: 90%;
     text-align: left;
-    justify-self: start;
-    align-self: center;
     padding: 0 $paddingsides;
     line-height: 1.5;
     height: 30vh;
     color: $altTextColor;
+
     @include media($tablet) {
-        padding: 0 ;
+        padding: 0;
         line-height: 1.5;
         width: 50%;
     }
-    h1{
-        font-size: 4vh;
+
+
+    h1 {
+
+        font-size: 25pt;
+
         @include media($tablet) {
-            font-size: 8vh;
+            font-size: 35pt;
         }
     }
-    p{
-        margin: 0;
+
+    h2 {
+
+        font-size: 20pt;
+        @include media($tablet) {}
+    }
+
+    p {
+        height: 8vh;
+        &:hover{
+            color: $altTextColor;
+        }
+    }
+
+    span {
+        width: 87%;
+        @include flex(row, space-between, center)
+    }
+
+    a {
+        &:hover {
+            color: $altTextColor;
+        }
         padding: 0;
+        width: 45%;
+
+        button {
+
+            @include btn;
+            transition: background 1s, color 2s;
+
+            &:hover {
+                background: $sneakerorange;
+                color: $altTextColor;
+            }
+        }
     }
 }
-.links{
-    button{
+
+.links {
+    button {
         padding: $padding;
     }
 }
