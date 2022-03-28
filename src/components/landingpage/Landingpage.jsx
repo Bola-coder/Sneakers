@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Style from './sass/style.module.scss';
 import Images from './img/Images';
 import { Link } from "react-router-dom";
+import { PRODUCTS } from './Product';
 const Landingpage = () => {
     const [active, setActive] = useState(0)
     const showProducts = (index) => {
@@ -22,16 +23,16 @@ const Landingpage = () => {
         setInterval(writeTexts, 150)
         window.addEventListener('load', function () {
             writeTexts()
-            showProducts()
         })
         console.log(lorem)
     }
     )
-
+    const ProductsTitles = ({ product, index, active, showProducts }) => <i onLoad={() => showProducts(index)} key={product.index}>{product.title}</i>
+    const ProductsPhotos = ({ product, index, active, showProducts }) => <img key={product.photo} alt='shirt' src={product.photo} />
     return (
         <section className={Style.homesection}>
             <div className={Style.hometext}>
-                <h3 className={Style.bannerText}>Checkout Our New <i>Wares</i>.</h3>
+                <h3 className={Style.bannerText}>Checkout Our New {PRODUCTS.map((product, index) => <ProductsTitles {...{ product, index, active, showProducts }} />)}.</h3>
                 <h1 className={Style.mensText}><strong>We  Might Have What You Like..</strong></h1>
                 <p id='lorem' className={`${Style.mobile}`}>  </p>
                 <span>
@@ -39,7 +40,9 @@ const Landingpage = () => {
                     <Link to='/collections'><button>See More</button></Link>
                 </span>
             </div>
-            <img alt='shirt' src={Images.acessories} />
+            {
+                PRODUCTS.map((product,index)  => <ProductsPhotos {...{product, index, active, showProducts}}/>)
+            }
         </section>
     )
 
