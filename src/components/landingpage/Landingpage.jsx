@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Style from './sass/style.module.scss';
-import Images from './img/Images';
 import { Link } from "react-router-dom";
 import { PRODUCTS } from './Product';
 const Landingpage = () => {
