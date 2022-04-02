@@ -3,10 +3,6 @@ import Style from './sass/style.module.scss';
 import { Link } from "react-router-dom";
 import { PRODUCTS } from './Product';
 const Landingpage = () => {
-    const [active, setActive] = useState(0)
-    const showProducts = (index) => {
-        setActive(index)
-    }
     useEffect(() => {
         document.title = 'Sneakers'
         let lorem = document.getElementById("lorem");
@@ -23,15 +19,34 @@ const Landingpage = () => {
         window.addEventListener('load', function () {
             writeTexts()
         })
-        console.log(lorem)
     }
     )
-    const ProductsTitles = ({ product, index, active, showProducts }) => <i onLoad={() => showProducts(index)} key={product.index}>{product.title}</i>
-    const ProductsPhotos = ({ product, index, active, showProducts }) => <img key={product.photo} alt='shirt' src={product.photo} />
+    const [active, setActive] = useState(0)
+    const [open, setOpen] = useState(0)
+   const plusSlides = () => {
+        clearInterval(myTimer);
+        if (n < 0){
+          showSlides(slideIndex -= 1);
+        } else {
+         showSlides(slideIndex += 1); 
+        }
+        if (n === -1){
+          myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+        } else {
+          myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+        }
+    }
+    const showProducts = (index) => {
+        setActive(index)
+        setOpen(0)
+    }
+   
+    const ProductsTitles = ({ product, index, active, open, showProducts }) => <i onLoad={() => showProducts()} key={product.index}>{product.title}</i>
+    const ProductsPhotos = ({ product, index, active, open, showProducts }) => <img onLoad={() => showProducts()} key={product.photo} alt='shirt' src={product.photo} />
     return (
         <section className={Style.homesection}>
             <div className={Style.hometext}>
-                <h3 className={Style.bannerText}>Checkout Our New {PRODUCTS.map((product, index) => <ProductsTitles {...{ product, index, active, showProducts }} />)}.</h3>
+                <h3 className={Style.bannerText}>Checkout Our New {PRODUCTS.map((product, index) => <ProductsTitles key={product.index} {...{ product, index, active, showProducts }} />)}.</h3>
                 <h1 className={Style.mensText}><strong>We  Might Have What You Like..</strong></h1>
                 <p id='lorem' className={`${Style.mobile}`}>  </p>
                 <span>
@@ -40,7 +55,7 @@ const Landingpage = () => {
                 </span>
             </div>
             {
-                PRODUCTS.map((product,index)  => <ProductsPhotos {...{product, index, active, showProducts}}/>)
+                PRODUCTS.map((product, index) => <ProductsPhotos key={product.index} {...{ product, index, active, showProducts }} />)
             }
         </section>
     )

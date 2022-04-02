@@ -10,6 +10,7 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProduct(url);
   }, [url]);
+  
   const fetchProduct = (url) => {
     fetch(url)
       .then((res) => res.json())
