@@ -23,10 +23,18 @@ function Nav() {
         <Link to="/collections">
           Collections
         </Link>
-        <p>Men</p>
-        <p>Women</p>
-        <p>About</p>
-        <p>Contact</p>
+        <Link to="/development">
+          Men
+        </Link>
+        <Link to="/development">
+          Women
+        </Link>
+        <Link to="/development">
+          About
+        </Link>
+        <Link to="/development">
+          Contact
+        </Link>
       </div>
       <div className="mobile-menu">
         <div className="hamburger">
@@ -41,10 +49,18 @@ function Nav() {
             <Link to="/collections">
               <p>Collections</p>
             </Link>
-            <p>Men</p>
-            <p>Women</p>
-            <p>About</p>
-            <p>Contact</p>
+            <Link to="/development">
+              Men
+            </Link>
+            <Link to="/development">
+              Women
+            </Link>
+            <Link to="/development">
+              About
+            </Link>
+            <Link to="/development">
+              Contact
+            </Link>
           </div>
         ) : null}
       </div>
