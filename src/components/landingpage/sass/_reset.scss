@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    overflow: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
     color: $textColor;
     @include media($tv) {

@@ -3,22 +3,27 @@ export const PRODUCTS =
     [
         {
             "title": "Wares",
-            "photo": `${Images.wares}`
+            "photo": `${Images.wares}`,
+            "id":"1"
         },
         {
             "title": "Devices",
-            "photo": `${Images.device}`
+            "photo": `${Images.device}`,
+            "id":"2"
         },
         {
             "title": "Appliances",
-            "photo": `${Images.appliances}`
+            "photo": `${Images.appliances}`,
+            "id":"3"
         },
         {
             "title": "Acessories",
-            "photo":`${Images.acessories}`
+            "photo":`${Images.acessories}`,
+            "id":"4"
         },
         {
             "title": "Gadgets",
-            "photo":`${Images.gadgets}`
+            "photo":`${Images.gadgets}`,
+            "id":"5"
         }
     ]
