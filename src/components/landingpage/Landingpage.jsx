@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Style from "./sass/style.module.scss";
-// import shirt from "./img/shirt.png";
 import { Link } from "react-router-dom";
 import { PRODUCTS } from "./Product";
 const Landingpage = () => {
   const [value, setValue] = useState("");
-  const [index, setIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
 
+  // useEffect Hook
   useEffect(() => {
     document.title = "Sneakers";
     let text = "Lorem Ipsum has been the industry's standard dummy....";
     let index = 0;
 
+    // Function to write text to the screen
     function writeTexts() {
-      // lorem.innerHTML = text.slice(0, index);
       let newText = text.slice(0, index);
       setValue(newText);
       index++;
@@ -22,13 +22,8 @@ const Landingpage = () => {
         setValue("");
       }
     }
-    function slideImages() {
-      if (index >= PRODUCTS.length) {
-        setIndex((prev) => prev + 1);
-      } else {
-        setIndex(0);
-      }
-    }
+
+    // SetIntervals to control how the function is being called.
     setInterval(writeTexts, 200);
     setInterval(slideImages, 3000);
 
@@ -38,11 +33,22 @@ const Landingpage = () => {
     };
   }, []);
 
+  // Function to slideShow the images
+  function slideImages() {
+    setSlideIndex((prev) => prev + 1);
+    if (slideIndex >= PRODUCTS.length - 1) {
+      setSlideIndex(0);
+    }
+  }
+
   return (
     <section className={Style.homesection}>
       <div className={Style.hometext}>
         <h3 className={Style.bannerText}>
-          Checkout Our New <h2>{PRODUCTS[index].title}</h2>
+          Checkout Our New{" "}
+          <span style={{ fontSize: "2rem" }}>
+            {PRODUCTS[slideIndex]?.title}
+          </span>
         </h3>
         <h1 className={Style.mensText}>
           <strong>We Have What You Need...</strong>
@@ -59,7 +65,7 @@ const Landingpage = () => {
           </Link>
         </span>
       </div>
-      <img src={PRODUCTS[index].photo} alt="Product" />
+      <img src={PRODUCTS[slideIndex]?.photo} alt="Product" />
     </section>
   );
 };
