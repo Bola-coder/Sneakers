@@ -7,14 +7,14 @@ import "./../css/cart.css";
 const Cart = () => {
   const [, , cart] = useContext(ProductContext);
   console.log(cart);
-  
+
   return (
-    <section className="cart">
+    <section className="carts">
       {cart?.length === 0 ? (
         <div className="cart-text">
           <h4>Your cart is empty</h4>
           <p>Browse our product to start shopping</p>
-          <Link to="/collections">
+          <Link to="/">
             {" "}
             <button>Browse Product</button>
           </Link>
@@ -23,8 +23,8 @@ const Cart = () => {
         <div className="cart-content">
           <h3>Hello</h3>
           {cart?.map((prod) => (
-            <div>
-              <p>{prod.category}</p>
+            <div className="cart" key={prod.id}>
+              <h3>{prod.category}</h3>
               <p>{prod.title}</p>
             </div>
           ))}

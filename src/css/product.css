@@ -24,7 +24,7 @@
 }
 
 .product {
-  width: 300px;
+  width: 250px;
   height: 300px;
   padding: 20px;
   margin: 15px 0;
@@ -84,4 +84,9 @@
 .product:hover button {
   background-color: #fff;
   color: hsl(26, 100%, 55%);
+}
+
+.product button:active {
+  color: #fff;
+  background-color: hsl(26, 100%, 55%);
 }

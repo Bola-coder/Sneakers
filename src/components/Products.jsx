@@ -16,8 +16,7 @@ import Loader from "./utilities/Loader";
 
 const Product = ({ products, loading, error, cart, setCart }) => {
   const { currentUser } = useAuth();
-  const colRef = collection(db, "userData");
-  let cartItems = [];
+  const colRef = collection(db, "userData"); // Getting reference to the useData collection on firebase
   // Function that adds new document to Cart.
 
   const addToCart = (id) => {
@@ -35,10 +34,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
               })
                 .then(() => {
                   console.log("Cart Added successfully");
-                  cartItems = [...docu.data().userCarts];
-                  // setCart(docu.data().userCarts);
-                  console.log(docu.data().userCarts);
-                  setCart(cartItems)
+                  setCart((prev) => [docu.data().userCarts, ...prev]);
                 })
 
                 .catch((err) => console.log(err));
@@ -49,7 +45,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
     }
   };
   // End of cart function
-  console.log(cartItems);
+
   return (
     <div className="container">
       {loading ? (
