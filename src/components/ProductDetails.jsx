@@ -10,7 +10,7 @@ const ProductDetails = () => {
   useEffect(() => {
     fetchProduct(url);
   }, [url]);
-  
+
   const fetchProduct = (url) => {
     fetch(url)
       .then((res) => res.json())
@@ -35,7 +35,7 @@ const ProductDetails = () => {
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p className="price">${product.price}</p>
-            <button> Add to BookMarks</button>
+            <button> Add to Cart</button>
           </div>
           <div className="right">
             <img src={product.image} alt={product.title} />

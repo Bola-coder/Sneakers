@@ -4,11 +4,11 @@ import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import {
-  getDocs,
   collection,
   updateDoc,
   arrayUnion,
   doc,
+  onSnapshot,
 } from "firebase/firestore";
 import { db } from "./../firebase.js";
 // Importing loader commponent
@@ -22,7 +22,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
 
   const addToCart = (id) => {
     if (currentUser) {
-      getDocs(colRef).then((snapshot) => {
+      onSnapshot(colRef, (snapshot) => {
         snapshot.docs.forEach((docu) => {
           // Check if the the id is the same as that of current user
           if (currentUser.uid === docu.data().userID) {
@@ -38,7 +38,9 @@ const Product = ({ products, loading, error, cart, setCart }) => {
                   cartItems = [...docu.data().userCarts];
                   // setCart(docu.data().userCarts);
                   console.log(docu.data().userCarts);
+                  setCart(cartItems)
                 })
+
                 .catch((err) => console.log(err));
             }
           }
@@ -62,7 +64,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
       <div className="products">
         {products
           ? products.map((prod) => (
-              <div className="product" key={prod.id}> 
+              <div className="product" key={prod.id}>
                 <img
                   src={prod.image ? prod.image : noImage}
                   alt={prod.name}

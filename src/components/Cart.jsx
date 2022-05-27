@@ -1,18 +1,20 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import { ProductContext } from "./context/ProductContext";
 import "./../css/cart.css";
 
 const Cart = () => {
   const [, , cart] = useContext(ProductContext);
   console.log(cart);
+  
   return (
     <section className="cart">
       {cart?.length === 0 ? (
         <div className="cart-text">
           <h4>Your cart is empty</h4>
           <p>Browse our product to start shopping</p>
-          <Link to="/">
+          <Link to="/collections">
             {" "}
             <button>Browse Product</button>
           </Link>
@@ -23,6 +25,7 @@ const Cart = () => {
           {cart?.map((prod) => (
             <div>
               <p>{prod.category}</p>
+              <p>{prod.title}</p>
             </div>
           ))}
         </div>
