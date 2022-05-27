@@ -34,7 +34,7 @@ const Product = ({ products, loading, error, cart, setCart }) => {
               })
                 .then(() => {
                   console.log("Cart Added successfully");
-                  setCart((prev) => [docu.data().userCarts, ...prev]);
+                  setCart([...docu.data().userCarts]);
                 })
 
                 .catch((err) => console.log(err));

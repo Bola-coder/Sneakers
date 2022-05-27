@@ -1,11 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useEfect, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import { ProductContext } from "./context/ProductContext";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "./../firebase.js";
+
 import "./../css/cart.css";
 
 const Cart = () => {
-  const [, , cart] = useContext(ProductContext);
+  const [, , cart, setCart] = useContext(ProductContext);
+  console.log(cart);
+  const colRef = collection(db, "userData");
+
+  // Working on this fnction currently
+  function fillCarts() {
+    onSnapshot(colRef, (snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        setCart((prev) => [doc.data().userCarts, ...prev]);
+      });
+    });
+  }
+
+  useEffect(() => {
+    fillCarts();
+  }, []);
   console.log(cart);
 
   return (
@@ -21,7 +38,6 @@ const Cart = () => {
         </div>
       ) : (
         <div className="cart-content">
-          <h3>Hello</h3>
           {cart?.map((prod) => (
             <div className="cart" key={prod.id}>
               <h3>{prod.category}</h3>
