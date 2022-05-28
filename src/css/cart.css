@@ -30,14 +30,21 @@
 
 .cart-content {
   padding: 10px;
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
+  display: block;
   flex-wrap: wrap;
+  width: 600px;
+  margin: 0 auto;
 }
 .cart {
-  width: 300px;
+  width: 500px;
+  padding: 10px;
+  margin: 10px;
+  background-color: red;
 }
+
 .cart h3 {
   font-size: 2rem;
 }

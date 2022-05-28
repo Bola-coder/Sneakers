@@ -31,7 +31,6 @@ const Cart = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(cart);
 
   return (
     <section className="carts">

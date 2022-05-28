@@ -29,9 +29,9 @@ function Nav() {
         <Link to="/development">
           Women
         </Link>
-        <Link to="/development">
+        {/* <Link to="/development">
           About
-        </Link>
+        </Link> */}
         <Link to="/development">
           Contact
         </Link>
