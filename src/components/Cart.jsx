@@ -31,11 +31,10 @@ const Cart = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   return (
     <section className="carts">
       {cart?.length === 0 ? (
-        <div className="cart-text">
+        <div className="cart-empty-text">
           <h4>Your cart is empty</h4>
           <p>Browse our product to start shopping</p>
           <Link to="/">
@@ -47,8 +46,20 @@ const Cart = () => {
         <div className="cart-content">
           {cart?.map((prod) => (
             <div className="cart" key={prod.id}>
-              <h3>{prod.category}</h3>
-              <p>{prod.title}</p>
+              <div className="cart-text">
+                <Link to={`/details/${prod.id}`}>
+                  <h4>
+                    {prod.title.length >= 30
+                      ? prod.title.slice(0, 30) + "..."
+                      : prod.title}
+                  </h4>
+                </Link>
+                <p>Category: {prod.category}</p>
+                <button>Delete from Cart</button>
+              </div>
+              <div className="cart-image">
+                <img src={prod.image} alt="" width="80px" height="80pzx" />
+              </div>
             </div>
           ))}
         </div>
