@@ -1,28 +1,36 @@
-import React, { useContext, useEfect, useEffect } from "react";
+import React, { useContext, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "./context/ProductContext";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "./../firebase.js";
-
+import { useAuth } from "./context/AuthContext";
 import "./../css/cart.css";
 
 const Cart = () => {
   const [, , cart, setCart] = useContext(ProductContext);
   console.log(cart);
   const colRef = collection(db, "userData");
+  const { currentUser } = useAuth();
 
-  // Working on this fnction currently
-  function fillCarts() {
+  // Using useCallback to memoize the function.
+  const fillCarts = useCallback(() => {
     onSnapshot(colRef, (snapshot) => {
       snapshot.docs.forEach((doc) => {
-        setCart((prev) => [doc.data().userCarts, ...prev]);
+        //Checking if a user is logged in and getting data for that user
+        if (currentUser && currentUser.uid === doc.data().userID) {
+          setCart(doc.data().userCarts);
+        }
       });
     });
-  }
+  }, [colRef, currentUser, setCart]);
+  // End of fill cart function.
 
+  // Creating a useEffect to run the fillCarts function once when the cart page is loaded.
   useEffect(() => {
     fillCarts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   console.log(cart);
 
   return (

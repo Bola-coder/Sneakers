@@ -6,7 +6,7 @@ const ProductOverview = () => {
   const url2 = "https://fakestoreapi.com/products";
   let [products, loading, error] = UseProduct(url2);
 
-  const [, , cart, setCart] = useContext(ProductContext);
+  const [, , , setCart] = useContext(ProductContext);
   const filteredProducts = products?.filter(
     (prod) => prod.image.original !== ""
   );
@@ -16,7 +16,6 @@ const ProductOverview = () => {
         products={filteredProducts}
         loading={loading}
         error={error}
-        cart={cart}
         setCart={setCart}
       />
     </div>

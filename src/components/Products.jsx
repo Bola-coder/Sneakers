@@ -14,11 +14,11 @@ import { db } from "./../firebase.js";
 // Importing loader commponent
 import Loader from "./utilities/Loader";
 
-const Product = ({ products, loading, error, cart, setCart }) => {
+const Product = ({ products, loading, error, setCart }) => {
   const { currentUser } = useAuth();
   const colRef = collection(db, "userData"); // Getting reference to the useData collection on firebase
-  // Function that adds new document to Cart.
 
+  // Function that adds new document to Cart.
   const addToCart = (id) => {
     if (currentUser) {
       onSnapshot(colRef, (snapshot) => {
