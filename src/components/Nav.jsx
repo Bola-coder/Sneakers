@@ -20,21 +20,13 @@ function Nav() {
         <Link to="/">
           <h2>Sneakers</h2>
         </Link>
-        <Link to="/collections">
-          Collections
-        </Link>
-        <Link to="/development">
-          Men
-        </Link>
-        <Link to="/development">
-          Women
-        </Link>
+        <Link to="/">Collections</Link>
+        <Link to="/development">Men</Link>
+        <Link to="/development">Women</Link>
         {/* <Link to="/development">
           About
         </Link> */}
-        <Link to="/development">
-          Contact
-        </Link>
+        <Link to="/development">Contact</Link>
       </div>
       <div className="mobile-menu">
         <div className="hamburger">
@@ -46,21 +38,13 @@ function Nav() {
         {showMenu ? (
           <div className="mobile-content">
             <FontAwesomeIcon icon={faTimes} onClick={onHamburgerClick} />
-            <Link to="/collections">
+            <Link to="/">
               <p>Collections</p>
             </Link>
-            <Link to="/development">
-              Men
-            </Link>
-            <Link to="/development">
-              Women
-            </Link>
-            <Link to="/development">
-              About
-            </Link>
-            <Link to="/development">
-              Contact
-            </Link>
+            <Link to="/development">Men</Link>
+            <Link to="/development">Women</Link>
+            <Link to="/development">About</Link>
+            <Link to="/development">Contact</Link>
           </div>
         ) : null}
       </div>

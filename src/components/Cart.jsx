@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "./context/ProductContext";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, doc, updateDoc, arrayRemove } from "firebase/firestore";
 import { db } from "./../firebase.js";
 import { useAuth } from "./context/AuthContext";
 import "./../css/cart.css";
 
 const Cart = () => {
-  const [, , cart, setCart] = useContext(ProductContext);
+  const [products, , cart, setCart] = useContext(ProductContext);
   console.log(cart);
   const colRef = collection(db, "userData");
   const { currentUser } = useAuth();
@@ -30,6 +30,36 @@ const Cart = () => {
     fillCarts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+
+  // Creating a function to delete items from cart
+  const deleteFromCart = (id) => {
+    if (currentUser) {
+      onSnapshot(colRef, (snapshot) => {
+        snapshot.docs.forEach((docu) => {
+          // Check if the the id is the same as that of current user
+          if (currentUser.uid === docu.data().userID) {
+            const newProduct = products.filter((prod) => prod.id === id);
+            if (newProduct) {
+              // Getting a reference to the current document
+              const docRef = doc(colRef, docu.id);
+              // Removing the product from the array
+              updateDoc(docRef, {
+                userCarts: arrayRemove(newProduct[0]),
+              })
+                .then(() => {
+                  console.log("Cart Item Removed successfully");
+                  setCart([...docu.data().userCarts]);
+                })
+
+                .catch((err) => console.log(err));
+            }
+          }
+        });
+      });
+    }
+  }
+  // End of Delete from cart function.
 
   return (
     <section className="carts">
@@ -55,10 +85,10 @@ const Cart = () => {
                   </h4>
                 </Link>
                 <p>Category: {prod.category}</p>
-                <button>Delete from Cart</button>
+                <button onClick={() => deleteFromCart(prod.id)}>Delete from Cart</button>
               </div>
               <div className="cart-image">
-                <img src={prod.image} alt="" width="80px" height="80pzx" />
+                <img src={prod.image} alt="" width="80px" height="80px" />
               </div>
             </div>
           ))}
