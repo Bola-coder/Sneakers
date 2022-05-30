@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { ProductContext } from "./context/ProductContext";
 import "./../css/productDetails.css";
 import Loader from "./utilities/Loader";
 const ProductDetails = () => {
@@ -8,6 +9,8 @@ const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [, , , , addToCart] = useContext(ProductContext);
   useEffect(() => {
     fetchProduct(url);
   }, [url]);
@@ -36,7 +39,7 @@ const ProductDetails = () => {
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p className="price">${product.price}</p>
-            <button> Add to Cart</button>
+            <button onClick={() => addToCart(product.id)}> Add to Cart</button>
           </div>
           <div className="right">
             <img src={product.image} alt={product.title} />

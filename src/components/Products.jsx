@@ -1,50 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./../css/product.css";
 import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
-import { useAuth } from "./context/AuthContext";
-import {
-  collection,
-  updateDoc,
-  arrayUnion,
-  doc,
-  onSnapshot,
-} from "firebase/firestore";
-import { db } from "./../firebase.js";
 // Importing loader commponent
 import Loader from "./utilities/Loader";
+import { ProductContext } from "./context/ProductContext";
 
 const Product = ({ products, loading, error, setCart }) => {
-  const { currentUser } = useAuth();
-  const colRef = collection(db, "userData"); // Getting reference to the useData collection on firebase
-
-  // Function that adds new document to Cart.
-  const addToCart = (id) => {
-    if (currentUser) {
-      onSnapshot(colRef, (snapshot) => {
-        snapshot.docs.forEach((docu) => {
-          // Check if the the id is the same as that of current user
-          if (currentUser.uid === docu.data().userID) {
-            const newProduct = products.filter((prod) => prod.id === id);
-            if (newProduct) {
-              // Getting a reference to the current document
-              const docRef = doc(colRef, docu.id);
-              updateDoc(docRef, {
-                userCarts: arrayUnion(newProduct[0]),
-              })
-                .then(() => {
-                  console.log("Cart Added successfully");
-                  setCart([...docu.data().userCarts]);
-                })
-
-                .catch((err) => console.log(err));
-            }
-          }
-        });
-      });
-    }
-  };
-  // End of cart function
+  const [ , , , , addToCart ] = useContext(ProductContext);
 
   return (
     <div className="container">
