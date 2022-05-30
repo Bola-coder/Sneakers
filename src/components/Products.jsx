@@ -66,7 +66,7 @@ const Product = ({ products, loading, error, setCart }) => {
                   alt={prod.name}
                   width="250px"
                 />
-                <Link to={`/details/${prod.id}`}>
+                <Link to={`/products/${prod.id}`}>
                   <p>
                     {prod.title.length < 40
                       ? prod.title

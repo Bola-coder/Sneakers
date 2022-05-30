@@ -1,7 +1,7 @@
 .error404 {
   padding: 30px;
   background-color: #eee;
-  height: 80vh;
+  /* height: 80vh; */
 }
 
 .error404-content {
@@ -29,4 +29,31 @@
 
 button:hover {
   background-color: hsl(26, 80%, 49%);
+}
+
+@media screen and (max-width: 768px) {
+  .error404-content {
+    max-width: 600px;
+    margin-left: 20px;
+  }
+
+  .error404 h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .error404-content {
+    max-width: 300px;
+    margin-left: 0px;
+  }
+
+  .error404 h2 {
+    font-size: 1.7rem;
+  }
+
+  .error404 button {
+    padding: 12px 15px;
+  }
 }

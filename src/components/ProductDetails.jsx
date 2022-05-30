@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./../css/productDetails.css";
+import Loader from "./utilities/Loader";
 const ProductDetails = () => {
   let { id } = useParams();
   const url = `https://fakestoreapi.com/products/${id}`;
@@ -28,7 +29,7 @@ const ProductDetails = () => {
   return (
     <main>
       {error ? <p className="loading-error">{error}</p> : ""}
-      {loading ? <p className="loading-error">Loading Product Details</p> : ""}
+      {loading ? <Loader /> : ""}
       {product ? (
         <div className="product-details">
           <div className="left">

@@ -77,7 +77,7 @@ const Cart = () => {
           {cart?.map((prod) => (
             <div className="cart" key={prod.id}>
               <div className="cart-text">
-                <Link to={`/details/${prod.id}`}>
+                <Link to={`/products/${prod.id}`}>
                   <h4>
                     {prod.title.length >= 30
                       ? prod.title.slice(0, 30) + "..."
