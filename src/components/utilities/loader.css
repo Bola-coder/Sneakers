@@ -12,7 +12,7 @@
   border-top: 7px solid hsl(26, 100%, 55%);
   border-bottom: 7px solid hsl(26, 100%, 55%);
   border-radius: 50%;
-  animation: spinner 3s linear infinite;
+  animation: spinner 1s linear infinite;
 }
 
 @keyframes spinner {

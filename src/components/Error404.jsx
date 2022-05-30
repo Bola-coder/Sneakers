@@ -6,8 +6,7 @@ const Error404 = () => {
     <div className="error404">
       <div className="error404-content">
         <h2>
-          Sorry, The page you requested cannot be found. We are so sorry about
-          this
+          Sorry, The page you requested cannot be found. You think you're lost?
         </h2>
         <Link to="/">
           <button>Go back to homepage</button>

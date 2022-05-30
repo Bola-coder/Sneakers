@@ -51,7 +51,7 @@ const Product = ({ products, loading, error, setCart }) => {
       {loading ? (
         <div className="loading">
           <Loader />
-          <p className="loading-text">Loading Products... Please Wait.</p>
+          {/* <p className="loading-text">Loading Products... Please Wait.</p> */}
         </div>
       ) : (
         ""
