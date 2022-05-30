@@ -36,15 +36,18 @@ function Nav() {
           </Link>
         </div>
         {showMenu ? (
-          <div className="mobile-content">
+          <div className="mobile-content" onClick={onHamburgerClick}>
             <FontAwesomeIcon icon={faTimes} onClick={onHamburgerClick} />
             <Link to="/">
               <p>Collections</p>
             </Link>
-            <Link to="/development">Men</Link>
-            <Link to="/development">Women</Link>
-            <Link to="/development">About</Link>
-            <Link to="/development">Contact</Link>
+            <Link to="/development">
+              {" "}
+              <p>Men</p>{" "}
+            </Link>
+            <Link to="/development">
+              <p>Women</p>
+            </Link>
           </div>
         ) : null}
       </div>

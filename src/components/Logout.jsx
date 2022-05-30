@@ -16,12 +16,12 @@ const Logout = () => {
     <div className="logout">
       <button
         style={{
-          padding: "10px 15px",
+          padding: "10px 12px",
           backgroundColor: "hsl(26, 100%, 55%)",
           color: "#fff",
-          fontSize: " 16px",
+          fontSize: " 12px",
           border: "none",
-          borderRadius: "10px",
+          borderRadius: "4px",
         }}
         onClick={handleLogout}>
         Log Out

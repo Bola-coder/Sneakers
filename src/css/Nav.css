@@ -152,6 +152,16 @@ nav {
   .mobile-content p {
     padding: 20px;
     font-size: 1.5rem;
+    font-weight: bold;
+    color: hsl(26, 100%, 55%);
+  }
+
+  .mobile-content a {
+    text-decoration: none;
+  }
+
+  .current {
+    font-size: 12px;
   }
 }
 
@@ -159,6 +169,11 @@ nav {
   .mobile-content {
     width: 250px;
     height: 100vh;
+  }
+
+  .profile svg {
+    font-size: 20px;
+    margin-right: 10px;
   }
 }
 
