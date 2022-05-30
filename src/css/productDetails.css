@@ -46,3 +46,40 @@ main {
   width: 300px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+  }
+
+  .left h2 {
+    font-size: 2rem;
+  }
+
+  .left p {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .left h2 {
+    font-size: 1.7rem;
+  }
+
+  .left p {
+    font-size: 1rem;
+  }
+
+  .left button {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .right {
+    margin-top: 30px;
+  }
+
+  .right img {
+    width: 250px;
+  }
+}
