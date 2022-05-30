@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import "./../css/product.css";
-import noImage from "./../images/no-image.jpg";
 import { Link } from "react-router-dom";
-// Importing loader commponent
-import Loader from "./utilities/Loader";
 import { ProductContext } from "./context/ProductContext";
+import Loader from "./utilities/Loader";
+import noImage from "./../images/no-image.jpg";
+import "./../css/product.css";
 
 const Product = ({ products, loading, error, setCart }) => {
+  // Getting the addToCart function from the ProductContext.
   const [ , , , , addToCart ] = useContext(ProductContext);
 
   return (

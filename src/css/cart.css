@@ -82,3 +82,23 @@
 .cart-text button:hover {
   color: #fff;
 }
+
+@media screen and (max-width: 425px) {
+  /* .cart {
+    height: 230px;
+  } */
+
+  .cart-text h4 {
+    font-size: 1.3rem;
+  }
+
+  .cart-text p {
+    font-size: 0.8rem;
+  }
+
+  .cart-text button {
+    margin-top: 20px;
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}
